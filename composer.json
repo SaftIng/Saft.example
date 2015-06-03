@@ -15,8 +15,10 @@
         }
     ],
     "require": {
-        "tombzombie/dice": "dev-master",
-        "saft/saft": "dev-master"
+        "tombzombie/dice": "dev-PHP5.3",
+        "saft/saft": "dev-master",
+        "semsol/arc2": "dev-master",
+        "easyrdf/easyrdf": "dev-master"
     },
     "autoload": {
         "psr-4": {
