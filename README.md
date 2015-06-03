@@ -41,7 +41,7 @@ filepath in the `php` command.
 php DependencyInjection/Dice/InstanceAClass.php
 ```
 
-You should some output on your terminal.
+You should see some output on your terminal.
 
 ### Using a webserver
 
