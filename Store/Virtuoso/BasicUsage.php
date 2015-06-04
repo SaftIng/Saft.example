@@ -23,7 +23,7 @@ $config = array(
 );
 
 // instantiate the store adapter which handles the communication with Virtuoso.
-$virtuoso = new Saft\Backend\Virtuoso\Store\Virtuoso(
+$virtuoso = new Saft\Addition\Virtuoso\Store\Virtuoso(
     new NodeFactoryImpl(),
     new StatementFactoryImpl(),
     new QueryFactoryImpl(),

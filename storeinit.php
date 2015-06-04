@@ -19,7 +19,7 @@ $dice = new \Dice\Dice();
 $dice->addRule('*', $rule);
 
 $params = [['dsn' => 'vos', 'username' => 'dba', 'password' => 'dba']];
-$store = $dice->create("Saft\\Backend\\Virtuoso\\Store\\Virtuoso", $params);
+$store = $dice->create("Saft\\Addition\\Virtuoso\\Store\\Virtuoso", $params);
 
 //$parser = getParser("turtle");
 //$statements = $parser->parseStreamToIterator($fileStream, "http://example.org", "turtle");
