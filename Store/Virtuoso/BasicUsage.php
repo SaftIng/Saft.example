@@ -11,7 +11,7 @@ use Saft\Rdf\NodeFactoryImpl;
 use Saft\Rdf\StatementFactoryImpl;
 use Saft\Rdf\StatementIteratorFactoryImpl;
 use Saft\Sparql\Query\QueryFactoryImpl;
-use Saft\Store\Result\ResultFactoryImpl;
+use Saft\Sparql\Result\ResultFactoryImpl;
 
 /**
  * Configuration information about how to access Virtuoso.
