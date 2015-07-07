@@ -9,6 +9,8 @@
 
 require dirname(__FILE__) .'/../vendor/autoload.php';
 
+// create an instance of LiteralImpl by given a string
+// a literal must be instanciated with a string value, and will throw an exception otherwise.
 $literal = new Saft\Rdf\LiteralImpl('foo');
 
 // output the value of the literal
