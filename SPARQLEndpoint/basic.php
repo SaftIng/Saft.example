@@ -1,15 +1,23 @@
 <?php
 
 /**
- * That file is a basic runable SPARQL endpoint and can handle ASK and SELECT queries. Copy That
+ * That file is a basic runable SPARQL endpoint and can handle ASK and SELECT queries. Copy that
  * file in a folder of your webserver and voilá, and it will handles SPARQL queries coming via
  * query parameter.
  *
- *      call http://localhost/test/?query=SELECT ... to get a result
+ * Call
  *
- * That particular implementation provides access to a Virtuoso store, which is
- * usually not necessary due Virtuoso has its own SPARQL endpoint, but is for demonstration purposes
- * only.
+ *      http://localhost/sparql/?query=SELECT...
+ *
+ * if the folder with THIS file is located under
+ *
+ *      YOUR_WEBROOT/sparql/index.php
+ *
+ * to get a result.
+ *
+ * That particular implementation provides access to a Virtuoso store, which is usually not necessary
+ * due Virtuoso has its own SPARQL endpoint. It is for demonstration purposes only, and because of that
+ * it currently only supports ASK and SELECT queries.
  *
  * That implementation is Access-Control-Allow-Origin friendly.
  */
@@ -46,6 +54,7 @@ $virtuoso = new Virtuoso(
 
 $queryResult = $virtuoso->query(urldecode($_REQUEST['query']));
 
+
 // ask
 if ('askQuery' === QueryUtils::getQueryType($_REQUEST['query'])) {
     $result = array(
@@ -70,8 +79,12 @@ if ('askQuery' === QueryUtils::getQueryType($_REQUEST['query'])) {
         $resultEntry = array();
 
         foreach ($queryResult->getVariables() as $var) {
+            // if key $var has no valid value, ignore it and go to the next entry
+            if (false === isset($entry[$var])) {
+                continue;
+
             // uri
-            if ($entry[$var]->isNamed()) {
+            } elseif ($entry[$var]->isNamed()) {
                 $resultEntry[$var] = array(
                     'type' => 'uri',
                     'value' => $entry[$var]->getUri()
