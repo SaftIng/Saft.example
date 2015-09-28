@@ -1,9 +1,10 @@
 <?php
 
 /**
- * That file is a basic runable SPARQL endpoint and can handle ASK and SELECT queries. Copy that
- * file in a folder of your webserver and voilá, and it will handles SPARQL queries coming via
- * query parameter.
+ * That file is a basic runable SPARQL endpoint and can handle ASK and SELECT queries. To do so:
+ * 1. copy that file in a folder of your webserver
+ * 2. execute composer update
+ * 3. after that, it should handle SPARQL queries coming via query parameter.
  *
  * Call
  *
