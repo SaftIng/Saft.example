@@ -35,7 +35,7 @@ $virtuoso = new Saft\Addition\Virtuoso\Store\Virtuoso(
 // output a list of all available graphs
 echo 'Available graphs:'. PHP_EOL;
 foreach ($virtuoso->getGraphs() as $graph) {
-    echo PHP_EOL .'-'. $graph->getUri();
+    echo PHP_EOL .'-'. $graph->getUri().PHP_EOL;
 }
 
 // if you dont see a graph in the output, than because there is no one, at least for the public.

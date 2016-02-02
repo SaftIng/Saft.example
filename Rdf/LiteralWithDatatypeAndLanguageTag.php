@@ -24,4 +24,4 @@ $stringLiteral = new Saft\Rdf\LiteralImpl(
 
 echo PHP_EOL . 'stringLiteral value: '. $stringLiteral->getValue();
 echo PHP_EOL . 'stringLiteral datatype: '. $stringLiteral->getDatatype();
-echo PHP_EOL . 'stringLiteral lang: '. $stringLiteral->getLanguage();
+echo PHP_EOL . 'stringLiteral lang: '. $stringLiteral->getLanguage().PHP_EOL;

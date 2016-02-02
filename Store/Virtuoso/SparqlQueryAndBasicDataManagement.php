@@ -73,3 +73,4 @@ foreach ($setIterator as $key => $entry) {
 
 // drop test graph
 $virtuoso->dropGraph (new NamedNodeImpl('http://saft/test'));
+echo PHP_EOL;
