@@ -1,0 +1,10 @@
+{
+    "description": "This composer.json is ready for use. It references all neccessary libraries you need to setup a fully fledged PropertyHelper.",
+    "require": {
+        "nette/caching": "2.*",
+        "ruflin/elastica": "3.*",
+        "saft/saft-skeleton": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable" : true
+}
