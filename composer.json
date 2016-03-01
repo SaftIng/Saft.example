@@ -15,11 +15,9 @@
         }
     ],
     "require": {
-        "level-2/dice": "*",
+        "level-2/dice": "2.0.*",
         "saft/saft": "dev-master",
-        "saft/saft-skeleton": "dev-master",
-        "semsol/arc2": "dev-master",
-        "easyrdf/easyrdf": "dev-master"
+        "saft/saft-skeleton": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -28,5 +26,6 @@
             ]
         }
     },
+    "prefer-stable": true,
     "minimum-stability": "dev"
 }
