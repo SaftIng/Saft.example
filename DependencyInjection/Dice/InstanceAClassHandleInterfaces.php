@@ -2,25 +2,32 @@
 
 require dirname(__FILE__) .'/../../vendor/autoload.php';
 
-// this tells Dice only, that an associated class has to be instantiate using the
-// following constructor parameter (see addRule at the bottom for more info)
-$ruleNamedNode = new \Dice\Rule();
-$ruleNamedNode->constructParams = array('http://www.w3.org/1999/02/22-rdf-syntax-ns#langString');
+// For more information look here: https://github.com/Level-2/Dice
 
-// this tells Dice, that an associated class has to be instantiate using the
-// following constructor parameter AND that each occurrences of Node
-// have to be replaced with an instance of Saft\Rdf\NamedNodeImpl
-$ruleLiteral = new \Dice\Rule();
-$ruleLiteral->constructParams = array('literal value', 'de_DE');
-$ruleLiteral->substitutions['Saft\Rdf\Node'] = new \Dice\Instance('Saft\Rdf\NamedNodeImpl');
+// sets up a rule to tell Dice that everytime you want an instance of Literal, you want an instance
+// of LiteralImpl instead, because Literal itself is an interface.
+// furthermore, you define the second parameter of the constructor here.
+$ruleLiteral = array(
+    'instanceOf' => 'Saft\Rdf\LiteralImpl',
+    'constructParams' => array(
+        // define second parameter which is of type NamedNode
+        new \Saft\Rdf\NamedNodeImpl('http://www.w3.org/2001/XMLSchema#string')
+    )
+);
+
+// sets up a rule to tell Dice that everytime you want an instance of NamedNode, you want an instance
+// of NamedNodeImpl instead, because NamedNode itself is an interface.
+$ruleNamedNode = array(
+    'instanceOf' => 'Saft\Rdf\NamedNodeImpl'
+);
 
 // the rules above are worthless alone, but now we connect them to certain classes.
 // if you create one of these classes using this $dice instance, the rules above will
 // take effect
 $dice = new \Dice\Dice();
-$dice->addRule('Saft\Rdf\NamedNodeImpl', $ruleNamedNode);
-$dice->addRule('Saft\Rdf\LiteralImpl', $ruleLiteral);
+$dice->addRule('Saft\Rdf\Literal', $ruleLiteral);
+$dice->addRule('Saft\Rdf\NamedNode', $ruleNamedNode);
 
-$literal = $dice->create('Saft\Rdf\LiteralImpl');
+$literal = $dice->create('Saft\Rdf\Literal', array('foo'));
 
-echo $literal->getValue().PHP_EOL;
+echo $literal->getValue() . PHP_EOL;

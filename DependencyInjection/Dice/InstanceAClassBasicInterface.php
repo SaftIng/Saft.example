@@ -7,12 +7,11 @@
 
 require dirname(__FILE__) .'/../../vendor/autoload.php';
 
-$rule = new \Dice\Rule();
-$rule->substitutions['Saft\Rdf\Node'] = new \Dice\Instance('Saft\Rdf\NamedNodeImpl');
+$rule = array('substitutions' => array('Saft\Rdf\Node' => array('instance' => 'Saft\Rdf\NamedNodeImpl')));
 
 $dice = new \Dice\Dice();
 $dice->addRule('Saft\Rdf\NamedNodeImpl', $rule);
 
 $namedNode = $dice->create('Saft\Rdf\NamedNodeImpl', array('http://uri'));
 
-echo $namedNode->getUri().PHP_EOL;
+echo $namedNode->getUri() . PHP_EOL;

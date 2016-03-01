@@ -15,4 +15,4 @@ class A {
 $dice = new \Dice\Dice();
 $a = $dice->create('A');
 
-echo $a->b.PHP_EOL;
+echo $a->b . PHP_EOL;
