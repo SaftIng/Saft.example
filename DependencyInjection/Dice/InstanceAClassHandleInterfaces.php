@@ -23,4 +23,4 @@ $dice->addRule('Saft\Rdf\LiteralImpl', $ruleLiteral);
 
 $literal = $dice->create('Saft\Rdf\LiteralImpl');
 
-echo $literal->getValue();
+echo $literal->getValue().PHP_EOL;

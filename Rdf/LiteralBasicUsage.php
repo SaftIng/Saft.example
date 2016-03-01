@@ -14,4 +14,4 @@ require dirname(__FILE__) .'/../vendor/autoload.php';
 $literal = new Saft\Rdf\LiteralImpl('foo');
 
 // output the value of the literal
-echo PHP_EOL. 'literal: '. $literal->getValue();
+echo PHP_EOL. 'literal: '. $literal->getValue().PHP_EOL;

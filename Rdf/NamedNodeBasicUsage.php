@@ -14,4 +14,4 @@ require dirname(__FILE__) .'/../vendor/autoload.php';
 $namedNode = new Saft\Rdf\NamedNodeImpl('foo:bar/1');
 
 // output the value of the named node
-echo PHP_EOL. 'named node: '. $namedNode->getUri();
+echo PHP_EOL. 'named node: '. $namedNode->getUri().PHP_EOL;

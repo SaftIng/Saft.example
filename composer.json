@@ -1,5 +1,5 @@
 {
-    "license": "GPL2",
+    "license": "GPL3",
     "authors": [
         {
             "name": "Natanael Arndt",
@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "tombzombie/dice": "dev-PHP5.3",
+        "level-2/dice": "*",
         "saft/saft": "dev-master",
         "saft/saft-skeleton": "dev-master",
         "semsol/arc2": "dev-master",
@@ -27,5 +27,6 @@
                 "."
             ]
         }
-    }
+    },
+    "minimum-stability": "dev"
 }

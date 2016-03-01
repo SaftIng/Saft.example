@@ -15,4 +15,4 @@ $dice->addRule('Saft\Rdf\NamedNodeImpl', $rule);
 
 $namedNode = $dice->create('Saft\Rdf\NamedNodeImpl', array('http://uri'));
 
-echo $namedNode->getUri();
+echo $namedNode->getUri().PHP_EOL;
