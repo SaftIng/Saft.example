@@ -1,0 +1,3 @@
+<http://foo/s> <http://foo/p> <http://foo/o> .
+<http://foo/s> <http://foo/p> <http://foo/o1> .
+<http://foo/p> <http://foo/p1> <http://foo/predicate> .
