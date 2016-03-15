@@ -16,9 +16,6 @@ use Saft\Rdf\NodeFactoryImpl;
 use Saft\Rdf\StatementFactoryImpl;
 use Saft\Rdf\StatementImpl;
 
-// load file content
-$fileContent = file_get_contents(__DIR__ . '/demo-statements.ttl');
-
 // init parser to parse n3 file content (using EasyRdf)
 $parser = new ParserEasyRdf(
     new NodeFactoryImpl(),
@@ -26,7 +23,7 @@ $parser = new ParserEasyRdf(
     'turtle' // RDF format of the file to parse later on (ttl => turtle)
 );
 // parse file content and transform it into a statement
-$statementIterator = $parser->parseStringToIterator($fileContent);
+$statementIterator = $parser->parseStreamToIterator(__DIR__ . '/demo-statements.ttl');
 
 echo PHP_EOL;
 
