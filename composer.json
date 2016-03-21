@@ -16,15 +16,7 @@
     ],
     "require": {
         "level-2/dice": "2.0.*",
-        "saft/saft": "*",
-        "saft/saft-skeleton": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Saft\\Example\\": [
-                "."
-            ]
-        }
+        "saft/saft-skeleton": "0.2.*"
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
