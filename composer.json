@@ -16,8 +16,8 @@
     ],
     "require": {
         "level-2/dice": "2.0.*",
-        "saft/saft": "dev-master",
-        "saft/saft-skeleton": "dev-master"
+        "saft/saft": "*",
+        "saft/saft-skeleton": "*"
     },
     "autoload": {
         "psr-4": {
