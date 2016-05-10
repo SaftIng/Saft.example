@@ -16,7 +16,7 @@
     ],
     "require": {
         "level-2/dice": "2.0.*",
-        "saft/saft-skeleton": "0.2.*"
+        "saft/saft-skeleton": "0.3.*"
     },
     "prefer-stable": true,
     "minimum-stability": "dev"
