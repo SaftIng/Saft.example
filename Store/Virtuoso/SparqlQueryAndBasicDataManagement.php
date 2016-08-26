@@ -14,6 +14,7 @@ use Saft\Rdf\StatementImpl;
 use Saft\Rdf\StatementIteratorFactoryImpl;
 use Saft\Sparql\Query\QueryFactoryImpl;
 use Saft\Sparql\Result\ResultFactoryImpl;
+use Saft\Addition\Virtuoso\Store\Virtuoso;
 
 /**
  * Configuration information about how to access Virtuoso.
@@ -25,7 +26,7 @@ $config = array(
 );
 
 // instantiate the store adapter which handles the communication with Virtuoso.
-$virtuoso = new Saft\Addition\Virtuoso\Store\Virtuoso(
+$virtuoso = new Virtuoso(
     new NodeFactoryImpl(),
     new StatementFactoryImpl(),
     new QueryFactoryImpl(),
